@@ -1,5 +1,7 @@
-**Pemrograman Mobile Petermuan 3**
+**Pemrograman Mobile Pertemuan 3**
+
 **Nama    : Novita Dwi Rahmadani**
+
 **NIM     : 2141720050**
 
 **Praktikum 1 : Menerapkan Control Flows("if/else")**
@@ -77,6 +79,12 @@
     Penjelasan : untuk menampilkan bilangan prima menggunakan perulangan forloop. for digunakan untuk mengiterasi angka dari 2 hingga 201. Di setiap iterai, program memanggil "isPrime()" untuk memerikasa apakah angka tsb adalah bilangan prima atau bukan. Program kemudian melakukan loop untuk memeriksa apakah angka tersebut dapat dibagi oleh angka lain, Jika angka dapat dibagi oleh angka lain selain 1 dan dirinya sendiri, maka dianggap bukan bilangan prima.
     ->Tampilan nama lengkap dan NIM
     ![Screenshoot tugas2](docs/tugas2.png)
+
+
+**Tugas Tambahan**
+Mencoba perulangan Switch-Cse
+![Screenshoot tgs](docs/tgs.png)
+Penjelasan : Pada kasus switch case ini, terjadi case yg terpenuhi adalah case 1 dan case 2 sebab tidak adanya 'break' antara case 1 dan case 2. sehingga perintah yang dilakukan adalah perintah dalam case 2.
     
 
     
