@@ -1,6 +1,15 @@
-// import 'dart:async';
+ import 'dart:async';
 import 'package:flutter/material.dart';
-// import 'basic_widgets/fab_widget.dart';
+import 'package:hello_world/basic_widgets/text_widget.dart';
+import 'package:hello_world/basic_widgets/image_widget.dart';
+import 'package:hello_world/basic_widgets/fab_widget.dart';
+import 'package:hello_world/basic_widgets/loading_cupertino.dart';
+
+import 'package:hello_world/basic_widgets/scaffold_widget.dart'; //scaffold
+import 'package:hello_world/basic_widgets/dialog_widget.dart'; //dialog
+import 'package:hello_world/basic_widgets/input_selection.dart'; //input selection
+// import 'package:hello_world/basic_widgets/date_time_widget.dart'; //datepicker
+// import 'package:hello_world/basic_widgets/date_time_hp.dart'; //datepicker
 
 void main() {
   runApp(const MyApp());
@@ -76,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 } 
 
-// Langkah 5
+//Langkah 5
 //  class MyApp extends StatelessWidget {
 //   const MyApp({Key? key}) : super(key: key);
 
@@ -97,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //   }
 // } 
 
-// Langkah 4
+//Langkah 4
 //  class MyApp extends StatelessWidget {
 //   const MyApp({Key? key}) : super(key: key);
 
@@ -155,8 +164,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //   );
 // }
 
-// Langkah 3
-//  class MyApp extends StatelessWidget {
+//Langkah 3
+// class MyApp extends StatelessWidget {
 //   const MyApp({Key? key}) : super(key: key);
 
 //   // This widget is the root of your application.
@@ -223,4 +232,4 @@ class _MyHomePageState extends State<MyHomePage> {
 //       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 //     );
 //   }
-// } 
+// }
