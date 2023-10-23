@@ -15,13 +15,13 @@ class HomePage extends StatelessWidget {
         stok: 8,
         rating: 4,
         image: Image.asset(
-          'images/sugar.jpg',
+          'images/gula.jpg',
           width: 200,
           height: 400,
           fit: BoxFit.cover,
         ),
         deskripsi:
-            'Gula Pasir Organik Berkualitas Premium, yang berasal dari tebu alami.'),
+            'Gula kristal putih adalah gula mentah yang telah mengalami proses pemurnian untuk menghilangkan molase sehingga gula rafinasi berwarna lebih putih dibandingkan gula mentah yang lebih berwarna kecokelatan..'),
     Item(
         name: "Salt",
         price: 4000,

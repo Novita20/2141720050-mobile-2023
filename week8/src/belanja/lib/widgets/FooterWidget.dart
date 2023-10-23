@@ -10,8 +10,8 @@ class FooterWidget extends StatelessWidget {
     return BottomNavigationBar(
       items: const [
         BottomNavigationBarItem(
-            icon: Icon(Icons.person), label: 'Brian Mohamad S.'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: '2141720133'),
+            icon: Icon(Icons.person), label: 'Novita Dwi Rahmadani.'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: '2141720050'),
       ],
       unselectedItemColor: Colors.black,
       selectedItemColor: Colors.black,
