@@ -110,3 +110,48 @@ Memanfaatkan string interpolation untuk tampilan yang informatif.
 
 ## **Praktikum 3 - Membuat State di Multiple Screens**
 
+Langkah 1 : Edit plan_provider.dart
+![Screenshoot img](docs/editplan.png)
+
+Langkah 2 : Edit main.dart
+![Screenshoot img](docs/editmain.png)
+
+Langkah 3 : Edit plan_screen.dart
+![Screenshoot img](docs/editscreen.png)
+
+Langkah 4 : Tambah getter plan
+![Screenshoot img](docs/getterplan.png)
+
+Langkah 5 : Menambahkan Method initState()
+![Screenshoot img](docs/init.png)
+
+Langkah 6 : Widget build
+![Screenshoot img](docs/widgetbuild.png)
+
+Langkah 7 : Edit _buildTaskTile
+![Screenshoot img](docs/takstile.png)
+
+Langkah 8 : Membuat screen baru
+![Screenshoot img](docs/screenbaru.png)
+
+![Screenshoot img](docs/mainpcs.png)
+
+Langkah 9 : Pindah ke class _PlanCreatorScreenState
+![Screenshoot img](docs/dispose.png)
+
+Langkah 10 : Pindah ke method build
+![Screenshoot img](docs/buildpcs.png)
+
+Langkah 11 : Membuat widget -buildListCreator
+![Screenshoot img](docs/listcreatorpcs.png)
+
+Langkah 12 : Membuat void addPlan()
+![Screenshoot img](docs/addplan.png)
+
+Langkah 13 : Membuat  widget _buildMasterPlans()
+![Screenshoot img](docs/masterplan.png)
+
+Hasil : 
+![Screenshoot img](docs/hasil1.png) 
+
+![Screenshoot img](docs/hasil2.png)
