@@ -32,4 +32,20 @@ Lakukan commit hasil jawaban Soal 1 dengan pesan "W13: Jawaban Soal 1"
 * Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut.
 * Lakukan commit hasil jawaban Soal 2 dengan pesan "W13: Jawaban Soal 2"
 
+    Langkah 5: Tambah method getColors()
+    Di dalam class ColorStream ketik method seperti kode berikut. Perhatikan tanda bintang di akhir keyword async* (ini digunakan untuk melakukan Stream data)
+![Screenshoot img](docs/getcolor.png)
 
+    Langkah 6: Tambah perintah yield*
+![Screenshoot img](docs/yield.png)
+
+### **Soal 3**
+* Jelaskan fungsi keyword yield* pada kode tersebut!
+Jawab : Penggunaan kata kunci yield* dalam suatu fungsi yang menghasilkan sebuah Stream.
+yield*: Kata kunci yield* digunakan dalam fungsi generator untuk menghasilkan nilai dari suatu Iterable atau Stream. Dalam hal ini, yield* digunakan untuk menghasilkan nilai dari Stream.periodic.
+Jadi, setiap kali Stream.periodic menghasilkan nilai (setiap detik), nilai tersebut "diteruskan" melalui generator menggunakan yield*. Ini memungkinkan nilai-nilai dari Stream tersebut masuk ke dalam aliran hasil fungsi generator. Perlu dicatat bahwa yield* digunakan pada fungsi generator untuk menghubungkan dua stream atau iterable, sehingga nilai-nilai yang dihasilkan oleh stream atau iterable sumber akan diteruskan ke dalam stream atau iterable hasil.
+
+* Apa maksud isi perintah kode tersebut?
+Jawab: Kode tersebut membuat dan mengembalikan suatu Stream yang menghasilkan nilai berdasarkan array colors setiap detik.
+
+* Lakukan commit hasil jawaban Soal 3 dengan pesan "W13: Jawaban Soal 3"
