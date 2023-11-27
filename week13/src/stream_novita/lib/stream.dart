@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'dart:async';
 class ColorStream{
-  Stream <Color> getColor()async*{
-    Stream<Color> getColor() async*{
-      yield* Stream.periodic(
-        const Duration(seconds: 1), (int t) {
-          int index = t % colors.length;
-          return colors[index];
-});
-    }
-  }
+  
   final List<Color> colors = [
     Colors.blueGrey,
     Colors.amber,
@@ -17,4 +9,11 @@ class ColorStream{
     Colors.lightBlue,
     Colors.teal
   ];
-}
+  Stream <Color> getColor()async*{
+      yield* Stream.periodic(
+        const Duration(seconds: 1), (int t) {
+          int index = t % colors.length;
+          return colors[index];
+});
+    }
+  }

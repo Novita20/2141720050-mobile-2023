@@ -49,3 +49,29 @@ Jadi, setiap kali Stream.periodic menghasilkan nilai (setiap detik), nilai terse
 Jawab: Kode tersebut membuat dan mengembalikan suatu Stream yang menghasilkan nilai berdasarkan array colors setiap detik.
 
 * Lakukan commit hasil jawaban Soal 3 dengan pesan "W13: Jawaban Soal 3"
+
+    Langkah 7: Buka main.dart
+    Ketik kode impor file ini pada file main.dart
+![Screenshoot img](docs/import.png)
+
+    Langkah 8: Tambah variabel
+    Ketik dua properti ini di dalam class _StreamHomePageState
+![Screenshoot img](docs/tbhvar.png)
+
+    Langkah 9: Tambah method changeColor()
+    Tetap di file main, Ketik kode seperti berikut
+![Screenshoot img](docs/changeclr.png)
+
+    Langkah 10: Lakukan override initState()
+![Screenshoot img](docs/initstate.png)
+
+    Langkah 11: Ubah isi Scaffold()
+![Screenshoot img](docs/scaffold.png)
+
+    Langkah 12: Run
+![Screenshoot img](docs/mobile1.gif)
+
+### **Soal 4**
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+Lakukan commit hasil jawaban Soal 4 dengan pesan "W13: Jawaban Soal 4"
+
