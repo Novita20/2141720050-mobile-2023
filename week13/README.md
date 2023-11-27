@@ -72,6 +72,20 @@ Jawab: Kode tersebut membuat dan mengembalikan suatu Stream yang menghasilkan ni
 ![Screenshoot img](docs/mobile1.gif)
 
 ### **Soal 4**
-Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
-Lakukan commit hasil jawaban Soal 4 dengan pesan "W13: Jawaban Soal 4"
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+* Lakukan commit hasil jawaban Soal 4 dengan pesan "W13: Jawaban Soal 4"
 
+    Langkah 13: Ganti isi method changeColor()
+![Screenshoot img](docs/ubahchange.png)
+
+**Soal 5**
+* Jelaskan perbedaan menggunakan listen dan await for (langkah 9) !
+jawab :
+1. await for:
+await for digunakan untuk mengonsumsi data dari sebuah stream secara berurutan.
+Dalam loop await for, setiap iterasi menunggu sampai elemen berikutnya tersedia di dalam stream sebelum melanjutkan ke iterasi berikutnya.
+2. listen:
+listen digunakan untuk mendaftarkan suatu fungsi yang akan dipanggil setiap kali ada elemen baru di dalam stream.
+Dalam kasus ini, fungsi yang diberikan akan dipanggil setiap kali ada perubahan warna di dalam colorStream.
+Kode di dalam fungsi listen akan dijalankan secara non-blocking, artinya eksekusi program tidak akan menunggu sampai semua elemen stream dikonsumsi.
+* Lakukan commit hasil jawaban Soal 5 dengan pesan "W13: Jawaban Soal 5"
