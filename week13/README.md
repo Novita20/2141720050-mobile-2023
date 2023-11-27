@@ -89,3 +89,63 @@ listen digunakan untuk mendaftarkan suatu fungsi yang akan dipanggil setiap kali
 Dalam kasus ini, fungsi yang diberikan akan dipanggil setiap kali ada perubahan warna di dalam colorStream.
 Kode di dalam fungsi listen akan dijalankan secara non-blocking, artinya eksekusi program tidak akan menunggu sampai semua elemen stream dikonsumsi.
 * Lakukan commit hasil jawaban Soal 5 dengan pesan "W13: Jawaban Soal 5"
+
+
+## **Praktikum 2 - Stream controllers dan sinks**
+
+    Langkah 1: Buka file stream.dart
+    Lakukan impor dengan mengetik kode ini.
+![Screenshoot img](docs/async.png)
+
+    Langkah 2: Tambah class NumberStream
+    Tetap di file stream.dart tambah class baru seperti berikut.
+![Screenshoot img](docs/classns.png)
+
+    Langkah 3: Tambah StreamController
+    Di dalam class NumberStream buatlah variabel seperti berikut
+![Screenshoot img](docs/finalns.png)
+
+    Langkah 4: Tambah method addNumberToSink
+    Tetap di class NumberStream buatlah method ini
+![Screenshoot img](docs/addnum.png)
+
+    Langkah 5: Tambah method close()
+![Screenshoot img](docs/close.png)
+
+    Langkah 6: Buka main.dart
+![Screenshoot img](docs/dart.png)
+
+    Langkah 7: Tambah variabel
+    Di dalam class _StreamHomePageState ketik variabel berikut
+![Screenshoot img](docs/lastnum.png)
+
+    Langkah 8: Edit initState()
+![Screenshoot img](docs/editinit.png)
+
+    Langkah 9: Edit dispose()
+![Screenshoot img](docs/dispose.png)
+
+    Langkah 10: Tambah method addRandomNumber()
+![Screenshoot img](docs/random.png)
+
+    Langkah 11: Edit method build()
+![Screenshoot img](docs/size.png)
+
+    Langkah 12: Run
+![Screenshoot img](docs/mobile2.gif)
+
+### **Soal 6**
+* Jelaskan maksud kode langkah 8 dan 10 tersebut!
+Jawab :
+Maksud dari kode langkah 8 :
+- Membuat instance dari NumberStream dan mendapatkan controller dari stream tersebut.
+- Membuat listener pada stream untuk mendengarkan perubahan, dan ketika ada perubahan, memanggil setState untuk memperbarui state dan mengupdate lastNumber.
+- Kode yang di-comment (// colorStream = ColorStream(); dan // changeColor();) sepertinya merupakan bagian yang dinonaktifkan (commented out) dan tidak dijalankan.
+
+Maksud dari kode langkah 10 :
+Kode tsb adalah sebuah fungsi yang menambahkan angka acak ke dalam numberStream. Poin utama dari kode ini adalah:
+- Menggunakan Random untuk menghasilkan angka acak antara 0 dan 9.
+- Memanggil addNumberToSink pada numberStream dengan angka acak yang telah dihasilkan sebagai argumen.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+* Lalu lakukan commit dengan pesan "W13: Jawaban Soal 6".
