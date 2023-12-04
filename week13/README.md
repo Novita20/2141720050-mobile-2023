@@ -149,3 +149,31 @@ Kode tsb adalah sebuah fungsi yang menambahkan angka acak ke dalam numberStream.
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 * Lalu lakukan commit dengan pesan "W13: Jawaban Soal 6".
+
+
+    Langkah 13: Buka stream.dart
+    Tambahkan method berikut.
+![Screenshoot img](docs/eror.png)
+
+    Langkah 14: Buka main.dart
+    Tambahkan method onError di dalam class StreamHomePageState pada method listen di fungsi initState() seperti berikut ini.
+![Screenshoot img](docs/listen.png)
+
+    Langkah 15: Edit method addRandomNumber()
+    Lakukan comment pada dua baris kode berikut, lalu ketik kode seperti berikut ini.
+![Screenshoot img](docs/addrn.png)
+
+**Soal 7**
+1. Jelaskan maksud kode langkah 13 sampai 15 tersebut!
+Jawab : 
+    kode langkah 13 => Fungsi tersebut untuk menambahkan kesalahan ('Error') ke sink (saluran atau tujuan data) yang terkait dengan objek controller. Sink biasanya digunakan dalam pemrograman berbasis stream untuk mengirim data atau kesalahan ke aliran data tersebut.
+
+    kode langkah 15 => Fungsi addRandomNumber membuat objek Random untuk menghasilkan bilangan acak. Namun, baris yang seharusnya menambahkan bilangan acak ke suatu stream (numberStream) telah di-comment (dihapus komentar), dan yang digunakan adalah pemanggilan fungsi addError dari stream tersebut. Oleh karena itu, fungsi ini tampaknya dirancang untuk menambahkan kesalahan ke stream (numberStream).
+    Dan apabila program mengalami error maka akan memunculkan nilai -1 yang sudah diinisialisasikan pada variabel lastNumber.
+2. Kembalikan kode seperti semula pada Langkah 15, comment addError() agar Anda dapat melanjutkan ke praktikum 3 berikutnya.
+3. Lalu lakukan commit dengan pesan "W13: Jawaban Soal 7".
+
+    Tampilan : 
+
+![Screenshoot img](docs/soal7.gif)
+
