@@ -35,6 +35,7 @@ class StreamHomePage extends StatefulWidget {
 class _StreamHomePageState extends State<StreamHomePage> {
   int lastNumber = 0;
   late StreamController numberStreamController;
+  late StreamTransformer transformer; // P03 langkah 1
   late NumberStream numberStream;
 
     @override 
@@ -42,16 +43,26 @@ class _StreamHomePageState extends State<StreamHomePage> {
       numberStream = NumberStream();
       numberStreamController = numberStream.controller;
       Stream stream = numberStreamController.stream;
-      stream.listen((event) {
-        setState(() {
-          lastNumber = event;
+
+        transformer = StreamTransformer<int, int>.fromHandlers( // P03
+          handleData:(value, sink) {
+            sink.add(value * 10);
+          },
+          handleError: (error, trace, sink){
+            sink.add(-1);
+          },
+          handleDone: (sink) => sink.close()
+        );
+        stream.transform(transformer).listen((event) { // P03
+          setState(() {
+            lastNumber = event;
+          });
+        }).onError((error){ // SOAL 7
+          setState((){
+            lastNumber = -1;
+          });
         });
-      }).onError((error){
-        setState(() {
-          lastNumber = -1;
-        });
-      });
-      // super.initState();
+        super.initState();
       // colorStream = ColorStream();
       // changeColor();
     }
@@ -64,10 +75,10 @@ class _StreamHomePageState extends State<StreamHomePage> {
 
     void addRandomNumber() {
     Random random = Random();
-    // int myNum = random.nextInt(10);
-    // numberStream.addNumberToSink(myNum);
+    int myNum = random.nextInt(10);
+    numberStream.addNumberToSink(myNum);
     //Soal 7   
-     numberStream.addError();
+    // numberStream.addError();
 }
     Color bgColor = Colors.blueGrey;
     late ColorStream colorStream;
@@ -99,23 +110,18 @@ class _StreamHomePageState extends State<StreamHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(lastNumber.toString()), // P05
-            //Text(lastNumber.toString()),
+           Text(lastNumber.toString()), // P05
+            // Text(lastNumber.toString()),
             ElevatedButton(
               onPressed: ()=>addRandomNumber(), 
               child: const Text('New Random Number')
             ),
-            ElevatedButton(
-              onPressed: () => addRandomNumber(), // P04
-              child: const Text('Stop Subscription'),
-            )
+            // ElevatedButton(
+            //   onPressed: () => addRandomNumber(), // P04
+            //   child: const Text('Stop Subscription'),
+            // )
           ],
         )
       ),
-    );
-  }
-    
-  }
-    
-    
-
+  );
+  }}

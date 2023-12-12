@@ -177,3 +177,31 @@ Jawab :
 
 ![Screenshoot img](docs/soal7.gif)
 
+## **Praktikum 3 - Injeksi data ke streams**
+
+    Langkah 1 : Buka main.dart
+    Tambahkan variabel baru di dalam class _StreamHomePageState
+![Screenshoot img](docs/transformer.png)
+
+    Langkah 2 : Tambahkan kode ini di initState
+![Screenshoot img](docs/initTrans.png)
+
+    Langkah 3: Tetap di initState
+    Lakukan edit 
+![Screenshoot img](docs/P03L3.png)
+
+    Langkah 4: Run
+    Terakhir, run atau tekan F5 untuk melihat hasilnya jika memang belum running. Bisa juga lakukan hot restart jika aplikasi sudah running. Maka hasilnya akan seperti gambar berikut ini. Anda akan melihat tampilan angka dari 0 hingga 90.
+![Screenshoot img](docs/soal8.gif)
+
+
+**Soal 8**
+1. Jelaskan maksud kode langkah 1-3 tersebut!
+    Jawaban :
+    * Pada langkah 1 membuat variabel transform bertipe late StreamTransformer
+    * Pada langkah 2 dilakukan inisialisasi variabel stream dengan menerapkan sink. handleData digunakan untuk menambahkan data dalam stream dengan value * 10. Sedangkan handleError bertugas untuk menangani error dan akan mengembalikan value -1 apabila terjadi error. handleDone digunakan untuk menutup sink ketika sink selesai.
+    * Pada langkah 3 dilakukan pemanggilan variabel transform yang telah diinisialisasi pada stream.listen((event){}).
+2. Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+3. Lalu lakukan commit dengan pesan "W13: Jawaban Soal 8".
+
+
