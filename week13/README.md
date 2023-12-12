@@ -205,3 +205,54 @@ Jawab :
 3. Lalu lakukan commit dengan pesan "W13: Jawaban Soal 8".
 
 
+### **Praktikum 4: Subscribe ke stream events**
+
+    Langkah 1: Tambah variabel
+    Tambahkan variabel 
+![Screenshoot img](docs/P4L1.png)
+
+    Langkah 2: Edit initState()
+![Screenshoot img](docs/P4L2.png)
+
+    Langkah 3: Tetap di initState()
+![Screenshoot img](docs/P4L3.png)
+
+    Langkah 4: Tambah properti onDone()
+    Tambahkan dibawahnya kode ini setelah onError
+![Screenshoot img](docs/P4L4.png)
+
+    Langkah 5: Tambah method baru
+    Ketik method ini di dalam class _StreamHomePageState
+![Screenshoot img](docs/P4L5.png)
+
+    Langkah 6: Pindah ke method dispose()
+    Jika method dispose() belum ada, Anda dapat mengetiknya dan dibuat override. Ketik kode ini didalamnya.
+![Screenshoot img](docs/P4L6.png)
+
+    Langkah 7: Pindah ke method build()
+    Tambahkan button kedua dengan isi kode seperti berikut ini.
+![Screenshoot img](docs/P4L7.png)
+
+    Langkah 8: Edit method addRandomNumber()
+    Edit kode seperti berikut ini.
+![Screenshoot img](docs/P4L8.png)
+
+    Langkah 9: Run
+    Anda akan melihat dua button seperti gambar berikut.
+![Screenshoot img](docs/soal9.gif)
+
+    Langkah 10: Tekan button ‘Stop Subscription'
+    Anda akan melihat pesan di Debug Console seperti berikut.
+![Screenshoot img](docs/cap9.png)
+
+
+**Soal 9**
+* Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
+Jawab : 
+- Langkah 2: Pada langkah 2, dilakukan pendaftaran `listener` pada `stream` menggunakan metode `listen`. Ketika ada data yang masuk ke `stream`, fungsi yang didefinisikan di dalam `listen` akan dijalankan. Dalam kasus ini, ketika ada perubahan pada `stream`, nilai terakhir (`lastNumber`) akan diperbarui menggunakan `setState`.
+
+- Langkah 6: Pada langkah 6, terjadi pembatalan (`cancel`) pendaftaran `listener` yang telah dilakukan sebelumnya. Ini berarti pemberhentian pemantauan terhadap perubahan pada `stream`. Jika suatu waktu tidak diperlukan untuk mendengarkan perubahan lebih lanjut, langkah ini dapat digunakan untuk menghentikan pemantauan tersebut dan menghemat sumber daya.
+
+- Langkah 8: Pada langkah 8, fungsi `addRandomNumber` bertujuan untuk menambahkan angka acak ke dalam `stream`. Langkah ini melibatkan pembuatan angka acak antara 0 dan 9 menggunakan `random.nextInt(10)`. Sebelum nilai ditambahkan ke `stream`, langkah ini memeriksa apakah `numberStreamController` (yang mungkin merepresentasikan `stream`) telah ditutup (`closed`). Jika belum ditutup, angka tersebut ditambahkan ke `stream` melalui `addNumberToSink`, tetapi jika sudah ditutup, nilai terakhir diatur ke -1 melalui `setState`.
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+* Lalu lakukan commit dengan pesan "W13: Jawaban Soal 9".
