@@ -323,3 +323,42 @@ Hal ini dimaksudkan untuk penanganan error. Jika pada kode program terdapat erro
 2. Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 3. Lalu lakukan commit dengan pesan "W13: Jawaban Soal 12".
 
+
+### **Praktikum 7: BLoC Pattern**
+
+    Langkah 1: Buat Project baru
+    Buatlah sebuah project flutter baru dengan nama bloc_random_nama (beri nama panggilan Anda) di folder week-13/src/ repository GitHub Anda. Lalu buat file baru di folder lib dengan nama random_bloc.dart
+
+    Langkah 2: Isi kode random_bloc.dart
+
+    Langkah 3: Buat class RandomNumberBloc()
+
+    Langkah 4: Buat variabel StreamController
+
+    Langkah 5: Buat constructor
+
+    Langkah 6: Buat method dispose()
+
+    Langkah 7: Edit main.dart
+
+    Langkah 8: Buat file baru random_screen.dart
+
+    Langkah 9: Lakukan impor material dan random_bloc.dart
+
+    Langkah 10: Buat StatefulWidget RandomScreen
+
+    Langkah 11: Buat variabel
+    Ketik kode ini di dalam class _RandomScreenState
+
+    Langkah 12: Buat method dispose()
+    Ketik kode ini di dalam class _StreamHomePageState
+
+    Langkah 13: Edit method build()
+    Ketik kode ini di dalam class _StreamHomePageState
+
+**Soal 13**
+* Jelaskan maksud praktikum ini ! Dimanakah letak konsep pola BLoC-nya ?
+Jawab : Praktikum ini bertujuan untuk mengelola suatu streamEvent, dengan BLoC dapat digunakan untuk menyelubungi semua sumber data dan antarmuka pengguna (UI) yang menggunakan data tersebut. Dalam konteks ini, terdapat dua pengontrol yang digunakan untuk menangani dua situasi, yaitu input dan output. _generateRandomController berperan sebagai sink yang dapat menambahkan angka ke dalam suatu stream. Di sisi lain, _randomNumberController berfungsi sebagai stream yang mengelola hasil dari sink.
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+![Screenshoot img](docs/soal13.gif)
+* Lalu lakukan commit dengan pesan "W13: Jawaban Soal 13".
