@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Stream | Novita Dwi Rahmadani',
+      title: 'Stream || Novita Dwi Rahmadani', // SOAL 1
       theme: ThemeData(
-        primarySwatch:Colors.deepPurple,
-       
+         primarySwatch:Colors.deepPurple, // SOAL 1
+        useMaterial3: true,
       ),
-      home: const StreamHomePage(),
+      home : const StreamHomePage(),
     );
   }
 }
@@ -27,68 +27,76 @@ class MyApp extends StatelessWidget {
 class StreamHomePage extends StatefulWidget {
   const StreamHomePage({super.key});
 
-
   @override
   State<StreamHomePage> createState() => _StreamHomePageState();
 }
 
 class _StreamHomePageState extends State<StreamHomePage> {
+  @override
   int lastNumber = 0;
   late StreamController numberStreamController;
-  late StreamTransformer transformer; // P03 langkah 1
   late NumberStream numberStream;
-  late StreamSubscription subscription; //P04 langkah 1
-    void initState(){
-      numberStream = NumberStream();
-      numberStreamController = numberStream.controller;
-      Stream stream = numberStreamController.stream.asBroadcastStream();
-      subscription = stream.listen((event) { //P04 Langkah 2
-        setState(() {
-          lastNumber = event;
-        });
+  late StreamTransformer transformer; // P03
+  late StreamSubscription subscription; // P04
+  late StreamSubscription subscription2; // P05
+  String values = '';
+  void initState(){
+    numberStream = NumberStream();
+    numberStreamController = numberStream.controller;
+    Stream stream = numberStreamController.stream.asBroadcastStream(); // P05
+    //Stream stream = numberStreamController.stream;
+    subscription = stream.listen((event){ // P04
+      setState(() {
+        // lastNumber = event;
+        values += '$event - ';
       });
-      subscription.onError((error){
-        setState(() {
-          lastNumber = -1;
-        });
+    });
+    subscription2 = stream.listen((event){
+      setState(() {
+        values += '$event - ';
       });
-      subscription.onDone(() {
-        print('OnDone was called');
+    });
+    subscription.onError((error){
+      setState(() {
+        lastNumber = -1;
       });
-        transformer = StreamTransformer<int, int>.fromHandlers( // P03
-          handleData:(value, sink) {
-            sink.add(value * 10);
-          },
-          handleError: (error, trace, sink){
-            sink.add(-1);
-          },
-          handleDone: (sink) => sink.close()
-        );
-        stream.transform(transformer).listen((event) { // P03
-          setState(() {
-            lastNumber = event;
-          });
-        }).onError((error){ // SOAL 7
-          setState((){
-            lastNumber = -1;
-          });
-        });
-        super.initState();
-      // colorStream = ColorStream();
-      // changeColor();
-    }
-    void stopStream(){ // P4L5 langkah 5
+    });
+    subscription.onDone((){
+      setState(() {
+        print('onDone was called');
+      });
+    });
+    // transformer = StreamTransformer<int, int>.fromHandlers( // P03
+    //   handleData:(value, sink) {
+    //     sink.add(value * 10);
+    //   },
+    //   handleError: (error, trace, sink){
+    //     sink.add(-1);
+    //   },
+    //   handleDone: (sink) => sink.close()
+    // );
+    // stream.transform(transformer).listen((event) { // P03
+    //   setState(() {
+    //     lastNumber = event;
+    //   });
+    // }).onError((error){ // SOAL 7
+    //   setState((){
+    //     lastNumber = -1;
+    //   });
+    // });
+    super.initState();
+    // colorStream = ColorStream();
+    // changeColor();
+  }
+  void stopStream(){ // P04
     numberStreamController.close();
   }
-   
-    @override
-    void dispose(){
-      numberStreamController.close();
-      super.dispose();
-      subscription.cancel(); //P04 langkah 6
-    }  
-
-    void addRandomNumber() {
+  void dispose() {
+    // numberStreamController.close();
+    // super.dispose();
+    subscription.cancel(); // P04
+  }
+  void addRandomNumber() {
     Random random = Random();
     // SOAL 6
     int myNum = random.nextInt(10);
@@ -100,29 +108,28 @@ class _StreamHomePageState extends State<StreamHomePage> {
         lastNumber = -1;
       });
     }
-    //Soal 7   
-    // numberStream.addError();
-}
-    Color bgColor = Colors.blueGrey;
-    late ColorStream colorStream;
-    void changeColor() async {
-      // await for (var eventColor in colorStream.getColor()){
-      //   setState((){
-      //     bgColor = eventColor;
-      //   });
-      // }
-      colorStream.getColors().listen((eventColor) {
-        setState(() {
-          bgColor = eventColor;
-        });
+    // numberStream.addError(); // SOAL 7
+  }
+  Color bgColor = Colors.blueGrey;
+  late ColorStream colorStream;
+  void changeColor() async {
+    // SOAL 4
+    // await for (var eventColor in colorStream.getColors()) {
+    // setState(() {
+    //   bgColor = eventColor;
+    // });
+    // SOAL 5
+    colorStream.getColors().listen((eventColor){
+      setState(() {
+        bgColor = eventColor;
       });
-    }
-
-     Widget build(BuildContext context) {
+    });
+  }
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Stream | Novita Dwi Rahmadani'),
-        backgroundColor: Color.fromARGB(255, 100, 2, 165),
+        backgroundColor: Colors.deepPurple,
       ),
       // body: Container(
       //   decoration: BoxDecoration(color: bgColor),
@@ -133,18 +140,19 @@ class _StreamHomePageState extends State<StreamHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-           Text(lastNumber.toString()), // P05
-            // Text(lastNumber.toString()),
+            Text(values), // P05
+            //Text(lastNumber.toString()),
             ElevatedButton(
               onPressed: ()=>addRandomNumber(), 
               child: const Text('New Random Number')
             ),
             ElevatedButton(
-              onPressed: () => stopStream(), // P04 langkah 7
+              onPressed: () => stopStream(), // P04
               child: const Text('Stop Subscription'),
             )
           ],
         )
       ),
-  );
-  }}
+    );
+  }
+}

@@ -256,3 +256,44 @@ Jawab :
 - Langkah 8: Pada langkah 8, fungsi `addRandomNumber` bertujuan untuk menambahkan angka acak ke dalam `stream`. Langkah ini melibatkan pembuatan angka acak antara 0 dan 9 menggunakan `random.nextInt(10)`. Sebelum nilai ditambahkan ke `stream`, langkah ini memeriksa apakah `numberStreamController` (yang mungkin merepresentasikan `stream`) telah ditutup (`closed`). Jika belum ditutup, angka tersebut ditambahkan ke `stream` melalui `addNumberToSink`, tetapi jika sudah ditutup, nilai terakhir diatur ke -1 melalui `setState`.
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 * Lalu lakukan commit dengan pesan "W13: Jawaban Soal 9".
+
+
+### **Praktikum 5: Multiple stream subscriptions**
+
+    Langkah 1 : Buka file main.dart
+    Ketik variabel berikut di class _StreamHomePageState
+![Screenshoot img](docs/P5L1.png)
+
+    Langkah 2 : Edit initState()
+    Ketik kode seperti berikut.
+![Screenshoot img](docs/P5L2.png)
+
+    Langkah 3 : Run
+
+**Soal 10**
+Jelaskan mengapa error itu bisa terjadi?
+Jawab : Hal ini karena stream sudah dilakukan subscription sebelumnya. Pada umumnya satu stream hanya dapat dilakukan satu subscription, sedangkan pada penambahan kode program praktikum ini bermaksud untuk melakukan subscription yang kedua kalinya. Maka dari itu error bisa terjadi.
+
+    Langkah 4: Set broadcast stream
+    Ketik kode seperti berikut di method initState()
+![Screenshoot img](docs/P5L4.png)
+
+    Langkah 5: Edit method build()
+    Tambahkan text seperti berikut.
+![Screenshoot img](docs/P5L4.png)
+
+    Langkah 6: Run
+    Tekan button ‘New Random Number' beberapa kali, maka akan tampil teks angka terus bertambah sebanyak dua kali.
+![Screenshoot img](docs/soal11.gif)
+
+**Soal 11**
+1. Jelaskan mengapa hal itu bisa terjadi ?
+Jawab : Saat mengklik tombol "New Random Number", akan terjadi pengulangan angka acak yang identik. Angka-angka ini terhubung dengan sebuah stream yang dikenali oleh dua objek subscription, yakni subscription dan subscription2. Stream ini akan menghasilkan peristiwa (angka acak) yang dipisahkan oleh tanda "-". Ketika tombol "Stop Stream" ditekan, langganan terhadap stream akan dihentikan, sehingga stream tidak lagi menghasilkan output, meskipun tombol "New Random Number" masih ditekan.
+2. Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+3. Lalu lakukan commit dengan pesan "W13: Jawaban Soal 10,11".
+
+
+
+
+
+
