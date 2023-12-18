@@ -292,8 +292,34 @@ Jawab : Saat mengklik tombol "New Random Number", akan terjadi pengulangan angka
 2. Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 3. Lalu lakukan commit dengan pesan "W13: Jawaban Soal 10,11".
 
+### **Praktikum 6: StreamBuilder**
+    Langkah 1: Buat Project Baru
+    Buatlah sebuah project flutter baru dengan nama streambuilder_nama (beri nama panggilan Anda) di folder week-13/src/ repository GitHub Anda.
 
+    Langkah 2: Buat file baru stream.dart
 
+    Langkah 3: Tetap di file stream.dart
 
+    Langkah 4: Edit main.dart
 
+    Langkah 5: Tambah variabel
+    Di dalam class _StreamHomePageState, ketika variabel ini.
+
+    Langkah 6: Edit initState()
+
+    Langkah 7: Edit method build()
+
+    Langkah 8: Run
+    Hasilnya, setiap detik akan tampil angka baru seperti berikut.
+![Screenshoot img](docs/soal12.gif)
+
+**Soal 12**
+1. Jelaskan maksud kode pada langkah 3 dan 7 !
+Jawab : 
+* LANGKAH 3
+Pada langkah ini class NumberStream akan melakukan stream dengan value sebuah angka random mulai dari 0 sampai dengan 9 dan akan berganti setiap hitungan satu detik.
+* LANGKAH 7
+Hal ini dimaksudkan untuk penanganan error. Jika pada kode program terdapat error maka program akan mencetak 'Error'. Sedangkan jika kode program tidak error dan snapshot memiliki data maka program akan mencetak angka random yang sudah diinisialisasikan pada langkah 3 dengan ukuran font 96.
+2. Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+3. Lalu lakukan commit dengan pesan "W13: Jawaban Soal 12".
 
