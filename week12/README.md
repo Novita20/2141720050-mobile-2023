@@ -81,4 +81,18 @@ Langkah 2 : Mendeklarasikan sebuah variabel total bertipe int yang diinisialisas
     Tambahkan variabel late dan method di class _FuturePageState seperti ini.
 ![Screenshoot img](docs/P3L2.png)
 
+    Langkah 3: Ganti isi kode onPressed()
+    Tambahkan kode berikut pada fungsi onPressed(). Kode sebelumnya bisa Anda comment.
+![Screenshoot img](docs/P3L3.png)
+
+    Langkah 4:
+    Terakhir, run atau tekan F5 untuk melihat hasilnya jika memang belum running. Bisa juga lakukan hot restart jika aplikasi sudah running. Maka hasilnya akan seperti gambar berikut ini. Setelah 5 detik, maka angka 42 akan tampil.
+![Screenshoot img](docs/soal5.gif)
+
+**Soal 5**
+1. Jelaskan maksud kode langkah 2 tersebut!'
+Jawab : Deklarasi pada kode program baris pertama berarti variabel completer yang bertipe late Completer akan diinisialisasi nanti sebelum digunakan. Hal ini memungkinkan pengguna menunggu hasil dari suatu operasi asinkronus. Selanjutnya untuk Function calculate merupakan Future asinkron yang akan menunda eksekusi selama 5 detik menggunakan future.delayed. Setelah penundaan selesai makan akan muncul angka 42 pada tampilan karena function getNumber() memanggil calculate.
+2. Capture hasil praktikum Anda berupa GIF dan 3. lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 5".
+
+
 
