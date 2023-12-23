@@ -51,6 +51,8 @@ class _FuturePageState extends State<FuturePage> {
               setState(() {
                 result = value.toString();
               });
+            }).catchError((e) { //SOAL 6
+              result = 'An error occurred';
             });
           },
           // onPressed: (){
@@ -119,7 +121,15 @@ class _FuturePageState extends State<FuturePage> {
   }
 
   Future calculate() async {
-    await Future.delayed(const Duration(seconds: 5));
-    completer.complete(42);
+    // await Future.delayed(const Duration(seconds: 5));
+    // completer.complete(42);
+    // SOAL 6
+    try {
+      await new Future.delayed(const Duration(seconds: 5));
+      completer.complete(42);
+      // throw Exception();
+    } catch (_) {
+      completer.completeError({});
+    }
   }
 }

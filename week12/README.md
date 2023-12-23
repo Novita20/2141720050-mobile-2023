@@ -96,3 +96,22 @@ Jawab : Deklarasi pada kode program baris pertama berarti variabel completer yan
 
 
 
+
+    Langkah 5: Ganti method calculate()
+    Gantilah isi code method calculate() seperti kode berikut, atau Anda dapat membuat calculate2()
+![Screenshoot img](docs/P3L5.png)
+
+    Langkah 6: Pindah ke onPressed()
+    Ganti menjadi kode seperti berikut.
+![Screenshoot img](docs/P3L6.png)
+
+**Soal 6**
+1. Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
+Jawab : pada langkah kelima, perubahan dilakukan pada method calculate() di mana perubahan dilakukan pada bagian penanganan kesalahan. Sekarang, method ini menggunakan blok try-catch untuk mengelola proses asinkron. Saat proses yang tertunda dalam Future.delayed selesai, nilai 42 akan dikembalikan melalui completer.complete(42). Namun, jika terjadi kesalahan (error) selama penundaan, blok catch akan dieksekusi dan completer.completeError({}) digunakan untuk menandai bahwa terjadi kesalahan dengan mengembalikan objek kosong.
+Sedangkan pada Langkah keenam mengubah bagian onPressed() di mana pemanggilan getNumber().then((value) {...}) dipindahkan ke dalam onPressed() dari tombol. Kemudian, penanganan kesalahan (error handling) ditambahkan dengan pemanggilan .catchError((e) {...}). Ketika future dari getNumber() menyelesaikan tugasnya, nilai yang diterima akan diubah menjadi string dan diperbarui ke dalam variabel result. Namun, jika ada kesalahan yang terjadi dalam proses tersebut, pesan 'An error occurred' akan disimpan dalam variabel result.
+
+2. Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu 
+Hasil dari kode program masih sama dengan sebelumnya karena dalam kode program tidak ditemukan error :
+![Screenshoot img](docs/soal5.gif)
+
+3. lakukan commit dengan pesan "W12: Soal 6".
